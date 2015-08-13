@@ -1,0 +1,28 @@
+//DB initial queries
+
+//each command is seperated by an empty line. Enter each one to setup the db correctly where 
+//from terminal
+
+//to start mongo db daemon
+sudo mongod
+
+//login to mongo
+mongo
+
+//should be logged into mongodb
+
+use CIB
+
+db.createCollection("shops")
+
+db.shops.insert( { "name" : "shop1", "address" : "Norfolk St at Bond St", "city" : "Newark", "state" : "NJ", "coordinates" : "40.7455662911477, -74.18320655822754"} )
+
+db.shops.insert( { "name" : "shop2", "address" : "South Broad Street", "city" : "Newark", "state" : "NJ", "coordinates" : "40.72143702499928, -74.19350624084473"}, { "name" : "shop3", "address" : "North Ironbound", "city" : "Newark", "state" : "NJ", "coordinates" : "40.72176227543698, -74.1496467590332"} )
+
+db.createCollection("menus")
+
+db.menus.insert( { "name" : "shop1", "coffee" : {"black" : 1.99, "hazelnut" : 2.99}, "food" : {"fries" : 0.99}, "other" : {"salad" : 2.49} } )
+
+db.menus.insert( { "name" : "shop2", "coffee" : {"black" : 0.99}, "food" : {"fries" : 0.99} } )
+
+db.menus.insert( { "name" : "shop3", "coffee" : {"black" : 1.49, "milk and cream" : 1.99}, "drink" : {"soda" : 0.99} } )

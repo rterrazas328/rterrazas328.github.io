@@ -1,0 +1,40 @@
+collecion1: shops
+{ 	name: "",
+	address: "",
+	city: "",
+	state: "",
+	coordinates: ","}
+
+collection2: menus
+{	name: "",
+	coffee: {},
+	food: {},
+	other: {} }
+
+[Log] kf (geolocation_init.js, line 37)
+D: -74.18320655822754 LONG
+k: 40.7455662911477 LAT
+__proto__: kf
+Norfolk St at Bond St, Newark, NJ 07103, USA
+
+[Log] kf (geolocation_init.js, line 37)
+D: -74.19350624084473
+k: 40.72143702499928
+__proto__: kf
+South Broad Street, Newark, NJ, USA
+
+[Log] kf (geolocation_init.js, line 37)
+D: -74.1496467590332
+k: 40.72176227543698
+__proto__: kf
+North Ironbound, Newark, NJ, USA
+
+DB initial queries
+
+db.shops.insert( { "name" : "shop1", "address" : "Norfolk St at Bond St", "city" : "Newark", "state" : "NJ", "coordinates" : "40.7455662911477, -74.18320655822754"} )
+
+db.shops.insert( { "name" : "shop2", "address" : "South Broad Street", "city" : "Newark", "state" : "NJ", "coordinates" : "40.72143702499928, -74.19350624084473"}, { "name" : "shop3", "address" : "North Ironbound", "city" : "Newark", "state" : "NJ", "coordinates" : "40.72176227543698, -74.1496467590332"} )
+
+db.menus.insert( { "name" : "shop1", "coffee" : {"black" : 1.99, "hazelnut" : 2.99}, "food" : {"fries" : 0.99}, "other" : {"salad" : 2.49} } )
+db.menus.insert( { "name" : "shop2", "coffee" : {"black" : 0.99}, "food" : {"fries" : 0.99} } )
+db.menus.insert( { "name" : "shop3", "coffee" : {"black" : 1.49, "milk and cream" : 1.99}, "drink" : {"soda" : 0.99} } )
