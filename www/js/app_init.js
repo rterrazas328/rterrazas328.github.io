@@ -153,6 +153,7 @@ function addListenerToShopMarker(sMarker, n){
 
 function loadMenu(shopNm){
     console.log("Opening Menu... for " + shopNm);
+    totalPrice = 0.00;
     var request = new XMLHttpRequest();
     
     request.onreadystatechange = function() {
@@ -184,14 +185,14 @@ function loadMenu(shopNm){
                     //create list element, add checkbox to it
                     var lstElement = document.createElement("li");
                     console.log(lstElement);
-                        lstElement.innerHTML = "<label><input type='checkbox' name='checkbox-" + count + "'>" + key + " : " + value + "</label>";//"<label><input type='checkbox' name='checkbox-" + count + "'><p style='font-size: 100%'>" + key + "</p><br><p style='font-size: 50%'>" + menuObj[key] + "</p></label>";
+                        lstElement.innerHTML = "<label><input onchange='updateTotal(this)' type='checkbox' name='checkbox-" + count + "' value='"+value+"'>" + key + " : " + value + "</label>";//"<label><input type='checkbox' name='checkbox-" + count + "'><p style='font-size: 100%'>" + key + "</p><br><p style='font-size: 50%'>" + menuObj[key] + "</p></label>";
                         listRoot.appendChild(lstElement);
                 }
                 else if (dataType == "object"){
                     for (var innerKey in value){
                         console.log(innerKey);
                         if (typeof value[innerKey] == "number"){
-                            var content = "<label><input type='checkbox' name='checkbox-" + count + "'>" + innerKey + " for " + value[innerKey] + "</label>";
+                            var content = "<label><input onchange='updateTotal(this)' type='checkbox' name='checkbox-" + count + "' value='"+value[innerKey]+"'>" + innerKey + " for " + value[innerKey] + "</label>";
                             $(content).appendTo("#menuList");
                         }
                     }
@@ -206,18 +207,34 @@ function loadMenu(shopNm){
     request.send();
 }
 
-function addToTotal(priceToAdd){//change to changeTotal possibility of removing item
-    var totalLabel = document.getElementById('menuTotal');
-    totalPrice += priceToAdd;
-    totalLabel.innerHTML = "Total: $" + totalPrice;
-}
-
 function closeAllInfoWindows(){
     for (var i=0; i<infoWindows.length; i++ ) {
         infoWindows[i].close();
     }
 }
 
+function updateTotal(element){
+    //console.log("in updateTotal()");
+    //console.log(element);
+    var value = parseFloat(element.getAttribute("value"));
+
+    if(element.checked){
+        totalPrice += value;
+    }
+    else{
+        totalPrice -= value;
+    }
+    totalPrice = parseFloat(totalPrice.toFixed(2));
+    /*var totalStr = "" + totalPrice;
+    var totalStr = totalStr.substring(0, 4);//*/
+    $('#menuTotal').text("Total: $" + totalPrice);
+
+}
+function undoMakeLocationSelection(){
+    $('#h1 h1').text("Pick your location");
+    document.getElementById('f1').innerHTML = '<h2 class="ui-title" role="heading" aria-level="1"> <a class="ui-btn ui-shadow" style="width: 50%" onclick="initShopsView()">Make this my location</a></h2>';
+    //$('#f1').innerHTML = '<a class="ui-btn ui-shadow" style="width: 50%" onclick="initShopsView()">Make this my location</a>';
+}
 
 function initShopsView(){
     console.log("In initShopsView");

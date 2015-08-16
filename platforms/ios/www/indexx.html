@@ -35,18 +35,6 @@
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
         <!-- Toast Plugin unused
         <script type="text/javascript" src="js/Toast.js"></script> -->
-        <!-- Paypal plugin -->
-        <script type="text/javascript" src="js/cdv-plugin-paypal-mobile-sdk.js"></script>
-        <script type="text/javascript" src="js/paypal-mobile-js-helper.js"></script>
-        <!-- Paypal JS -->
-        <script type="text/javascript" src="js/paypal.js"></script>
-        <!--<script type="text/javascript">
-            //paypal.initPaymentUI();
-            console.log(PayPalMobile);
-            console.log("set paypal UI!");
-            paypal.test();
-        </script> -->
-        
         <style type="text/css">
             html { height: 100% }
             body { height: 100%; margin: 0; padding: 0 }
@@ -58,70 +46,40 @@
         <script src="js/setInitialPosition.js"></script> -->
         <title>CIB</title>
     </head>
+    <!--<body onload="initialize_Map()">-->
     <body>
-
-        <!--Home Page-->
-        <div data-role="page" id="home">
-            <div data-role="header">
-                <h1>Home</h1>
-                <a href="#home" data-icon="home" data-transition="flip">Home</a>
-                <a href="#home" data-icon="arrow-l" data-transition="flip">Logout</a>
-            </div>
+    <!-- sid Start -->
+        <!--Home Page -->
+        <div id="home" data-role="page">
+        	<div data-role="header">
+        		<h1>Home</h1>
+        		<a href="home" data-icon="home" data-transition="flip">Home</a>
+        		<a href="mapPage" data-icon="arrow-l" data-transition="flip">Logout</a>
+        	</div>
 
             <div data-role="main" class="ui-content" id="mainPage" >
-                <a href="#mapPage" data-transition="flip" data-role="button" onclick="initialize_Map()">Find Coffee</a>
+                <a href="#mapPage" data-transition="flip" data-role="button">Find Coffee</a>
                 <a href="#MyList" data-transition="flip" data-role="button">MyList</a>
                 <a href="#Account" data-transition="flip" data-role="button">Account</a>
                 <a href="#History" data-transition="flip" data-role="button">History</a>
                 <a href="#Rating" data-transition="flip" data-role="button" >Rating</a>
             </div>
 
-            <div data-role-"footer" data-position="fixed" class="ui-bar"> 
-               <a href="#" data-role="button" data-icon="arrow-l">Back</a>
+        	<div data-role-"footer" data-position="fixed" class="ui-bar"> 
+        	   <a href="#" data-role="button" data-icon="arrow-l">Back</a>
             </div>
         </div>
-        <!--Store Selection-->
-        <div data-role="page" id="mapPage">
-            <div data-role="header" data-position="fixed" id="h1">
-                <h1>Pick your location</h1>
-                <a href="#home" data-icon="arrow-l" data-transition="flip">Back</a>
-            </div>
+
         
-            <div data-role="main" class="ui-content" id="map-canvas" >
-            </div>
+        <!--END -->
 
-            <div data-role="footer" data-position="fixed" id="f1">
-                <h2>
-                    <a class="ui-btn ui-shadow" style="width: 50%" onclick="initShopsView()" on>Make this my location</a>
-                </h2>
-            </div>
-        </div>
-        <!--Item Menu Page-->
-        <div data-role="page" id="menu" >
-            <div data-role="header" data-position="fixed" id="h2">
-                <h2 style="width: 48%">Select the items you wish to order</h2>
-            </div>
-            <div data-role="main" class="ui-content" id="shopMenu">
-                <!--<ul data-role="listview" id="menuList">
-                </ul> -->
-                <div class="ui-field-contain">
-                    <fieldset data-role="controlgroup" id="menuList">
+        
 
-                    </fieldset>
-                </div>
-            </div>
-            <div data-role="footer" data-position="fixed" id="f2">
-                <h2>
-                    <button id="buyNowBtn" > Buy Now !</button>
-                    <a class="ui-btn ui-shadow" style="width: 50%">Make Purchase</a>
-                    <label id="menuTotal">Total: $0.00</label>
-                </h2>
-            </div>
-            
+        <!-- MyList Page -->
+        <div id="MyList" data-role="page">
+            <div data-role="header">
+                <h1>MyList</h1>
+                <a href="home" data-icon="home" data-transition="flip">Home</a>
+                <a href="mapPage" data-icon="arrow-l" data-transition="flip">Logout</a>
+        	</div>
         </div>
-    <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript">
-        //app.initialize();
-    </script>
-    </body>
-</html>

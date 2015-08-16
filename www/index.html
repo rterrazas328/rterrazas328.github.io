@@ -64,8 +64,8 @@
         <div data-role="page" id="home">
             <div data-role="header">
                 <h1>Home</h1>
-                <a href="home" data-icon="home" data-transition="flip">Home</a>
-                <a href="home" data-icon="arrow-l" data-transition="flip">Logout</a>
+                <a href="#home" data-icon="home" data-transition="flip">Home</a>
+                <a href="#home" data-icon="arrow-l" data-transition="flip">Logout</a>
             </div>
 
             <div data-role="main" class="ui-content" id="mainPage" >
@@ -84,6 +84,7 @@
         <div data-role="page" id="mapPage">
             <div data-role="header" data-position="fixed" id="h1">
                 <h1>Pick your location</h1>
+                <a href="#home" data-icon="arrow-l" data-transition="flip" onclick="undoMakeLocationSelection()">Back</a>
             </div>
         
             <div data-role="main" class="ui-content" id="map-canvas" >
@@ -91,7 +92,7 @@
 
             <div data-role="footer" data-position="fixed" id="f1">
                 <h2>
-                    <a class="ui-btn ui-shadow" style="width: 50%" onclick="initShopsView()" on>Make this my location</a>
+                    <a class="ui-btn ui-shadow" style="width: 50%" onclick="initShopsView()">Make this my location</a>
                 </h2>
             </div>
         </div>
@@ -111,7 +112,7 @@
             </div>
             <div data-role="footer" data-position="fixed" id="f2">
                 <h2>
-                    <button id="buyNowBtn" > Buy Now !</button>
+                    <!--<button id="buyNowBtn" > Buy Now !</button>-->
                     <a class="ui-btn ui-shadow" style="width: 50%">Make Purchase</a>
                     <label id="menuTotal">Total: $0.00</label>
                 </h2>

@@ -7,7 +7,7 @@ var cur_y=0;
 var infoWindows = [];
 var lastShopClicked;
 var locICON = {
-    url:'./img/loc.png',
+    url:'img/loc.png',
     size: new google.maps.Size(20, 32)
 };
 var totalPrice = 0.00;
@@ -46,6 +46,11 @@ function initialize_Map() {
                 console.log(pos);
                 createMyMarker(pos, map);
                 console.log("done creating marker on tap!");
+            });
+
+            google.maps.event.addListenerOnce(map, 'idle', function() {
+                    google.maps.event.trigger(map, 'resize');
+                    map.setCenter(pos);
             });
 
         })//end event
@@ -122,7 +127,7 @@ function loadStores(region){
             //console.log(infoWindows);
         }
     }
-    request.open("GET", "http://localhost/shops.php?cName="+region, true);
+    request.open("GET", "https://salty-sierra-4017.herokuapp.com/shops.php?cName="+region, true);//https://salty-sierra-4017.herokuapp.com
     request.send();
     console.log("~~~~~~SENT AJAX REQUEST!!!~~~~~~~~~");
     //========================================================================================================================
@@ -197,7 +202,7 @@ function loadMenu(shopNm){
             console.log("count: " + count)
         }
     }
-    request.open("GET", "http://localhost/shops.php?sName="+shopNm, true);
+    request.open("GET", "https://salty-sierra-4017.herokuapp.com/shops.php?sName="+shopNm, true);
     request.send();
 }
 
@@ -255,4 +260,3 @@ function initShopsView(){
 function selectLocationButton(){
 
 }
-
