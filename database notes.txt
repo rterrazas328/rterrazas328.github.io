@@ -43,5 +43,5 @@ db.menus.insert( { "name" : "shop2", "coffee" : {"black" : 0.99}, "food" : {"fri
 db.menus.insert( { "name" : "shop3", "coffee" : {"black" : 1.49, "milk and cream" : 1.99}, "drink" : {"soda" : 0.99} } )
 
 db.menus.insert( { "name" : "shop4", "coffee" : {"black" : 1.99, "Iced Coffee with Milk" : 2.99, "Flat White" : 2.99}, "food" : {"Fries" : 0.99, "Chicken Strips" : 0.99}, "vegan" : {"salad" : 2.49} } )
-db.menus.insert( { "name" : "shop5", "coffee" : {"black" : 0.99, "Tiramisu Latte" : 3:49, "White Chocolate Mocha" : 3.49, "Vanilla Latte" : 2.99}, "food" : {"Fries" : 0.99, "Pork Roll" : 2.49}, "drink" : { "Soda" : 0.99, "Water" : 0.75} })
-db.menus.insert( { "name" : "shop6", "coffee" : {"black" : 0.99, "Tiramisu Latte" : 3:49, "Iced Vanilla Latte" : 3.75, "Espresso Macchiato" : 3.99, "Espresso" : 2.99}, "food" : {"Fries" : 0.99, "Large Brownie" : 0.99, "Large Cookie" : 0.99}, "drink" : { "Smoothie" : 1.99, "Water" : 0.75} })
+db.menus.insert( { "name" : "shop5", "coffee" : {"black" : 0.99, "Tiramisu Latte" : 3.49, "White Chocolate Mocha" : 3.49, "Vanilla Latte" : 2.99}, "food" : {"Fries" : 0.99, "Pork Roll" : 2.49}, "drink" : { "Soda" : 0.99, "Water" : 0.75} } )
+db.menus.insert( { "name" : "shop6", "coffee" : {"black" : 0.99, "Tiramisu Latte" : 3.49, "Iced Vanilla Latte" : 3.75, "Espresso Macchiato" : 3.99, "Espresso" : 2.99}, "food" : {"Fries" : 0.99, "Large Brownie" : 0.99, "Large Cookie" : 0.99}, "drink" : { "Smoothie" : 1.99, "Water" : 0.75} } )

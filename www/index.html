@@ -113,11 +113,21 @@
             <div data-role="footer" data-position="fixed" id="f2">
                 <h2>
                     <!--<button id="buyNowBtn" > Buy Now !</button>-->
-                    <a class="ui-btn ui-shadow" style="width: 50%">Make Purchase</a>
+                    <a class="ui-btn ui-shadow" style="width: 50%" href="#payment_confirmation">Make Purchase</a>
                     <label id="menuTotal">Total: $0.00</label>
                 </h2>
             </div>
             
+        </div>
+        <div data-role="page" id="payment_confirmation" >
+            <div data-role="main" class="ui-content">
+                <h1>Thank you for your purchase!</h1>
+            </div>
+            <div data-role="footer" data-position="fixed" id="f1">
+                <h2>
+                    <a class="ui-btn ui-shadow" style="width: 50%" href="#home">Go back to main menu</a>
+                </h2>
+            </div>
         </div>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">
